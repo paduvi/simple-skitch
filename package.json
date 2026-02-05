@@ -1,0 +1,33 @@
+{
+  "name": "simple-skitch",
+  "productName": "Simple Skitch",
+  "version": "1.0.0",
+  "description": "A simple screen capture and annotation tool",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.vietp.simpleskitch",
+    "productName": "Simple Skitch",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg"
+      ],
+      "icon": "assets/logo.png"
+    }
+  },
+  "keywords": [],
+  "author": "Viet P",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^40.1.0",
+    "electron-builder": "^26.4.0"
+  },
+  "dependencies": {
+    "fabric": "^7.1.0"
+  }
+}

@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f1f1f1;
+    overflow: hidden;
+}
+
+.toolbar {
+    height: 50px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.tool-group {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.separator {
+    width: 1px;
+    height: 30px;
+    background-color: #555;
+    margin: 0 10px;
+}
+
+.spacer {
+    flex: 1;
+}
+
+button {
+    background: transparent;
+    border: none;
+    color: #bbb;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #444;
+    color: white;
+}
+
+/* Tooltip styles */
+button[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 1000;
+    margin-top: 5px;
+}
+
+button[title] {
+    position: relative;
+}
+
+button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+input[type="color"] {
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: none;
+}
+
+#canvas-container {
+    flex: 1;
+    position: relative;
+    background-color: #fff;
+    /* Canvas background */
+    overflow: auto;
+    display: flex;
+    /* Removed justify-content and align-items to prevent scroll clipping */
+    background-image:
+        linear-gradient(45deg, #ccc 25%, transparent 25%),
+        linear-gradient(-45deg, #ccc 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ccc 75%),
+        linear-gradient(-45deg, transparent 75%, #ccc 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Fabric canvas wrapper overrides if needed */
+.canvas-container {
+    background-color: transparent !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    /* This ensures safe centering with overflow support */
+}

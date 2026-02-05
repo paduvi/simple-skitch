@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Skitch</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons (Optional, using CDN for simplicity or we can use SVG) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="toolbar">
+        <div class="tool-group">
+            <button id="btn-new" title="New"><i class="fas fa-file"></i></button>
+            <button id="btn-open" title="Open Image"><i class="fas fa-folder-open"></i></button>
+            <button id="btn-paste" title="Paste from Clipboard"><i class="fas fa-paste"></i></button>
+        </div>
+        <div class="separator"></div>
+        <div class="tool-group">
+            <button class="tool-btn active" data-tool="select" title="Select"><i
+                    class="fas fa-mouse-pointer"></i></button>
+            <button class="tool-btn" data-tool="arrow" title="Arrow"><i class="fas fa-location-arrow"></i></button>
+            <button class="tool-btn" data-tool="rectangle" title="Rectangle"><i
+                    class="fas fa-vector-square"></i></button>
+            <button class="tool-btn" data-tool="text" title="Text"><i class="fas fa-font"></i></button>
+            <button class="tool-btn" data-tool="marker" title="Marker"><i class="fas fa-marker"></i></button>
+            <button class="tool-btn" data-tool="highlighter" title="Highlighter"><i
+                    class="fas fa-highlighter"></i></button>
+            <button class="tool-btn" data-tool="crop" title="Crop"><i class="fas fa-crop-alt"></i></button>
+            <button class="tool-btn" data-tool="mosaic" title="Mosaic"><i class="fas fa-th"></i></button>
+        </div>
+        <div class="separator"></div>
+        <div class="tool-group">
+            <input type="color" id="color-picker" value="#ff0000">
+            <input type="range" id="width-slider" min="1" max="20" value="3">
+        </div>
+        <div class="spacer"></div>
+        <div class="tool-group">
+            <button id="btn-copy" title="Copy to Clipboard (Cmd+C)"><i class="fas fa-copy"></i></button>
+            <button id="btn-save" title="Save to File (Cmd+S)"><i class="fas fa-save"></i></button>
+        </div>
+        <div class="separator"></div>
+        <div class="tool-group">
+            <button id="btn-zoom-out" title="Zoom Out"><i class="fas fa-search-minus"></i></button>
+            <button id="btn-zoom-in" title="Zoom In"><i class="fas fa-search-plus"></i></button>
+        </div>
+        <div class="separator"></div>
+        <div class="tool-group">
+            <button id="btn-undo" title="Undo (Cmd+Z)"><i class="fas fa-undo"></i></button>
+            <button id="btn-redo" title="Redo (Cmd+Shift+Z)"><i class="fas fa-redo"></i></button>
+        </div>
+    </div>
+    <div id="canvas-container">
+        <canvas id="c"></canvas>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>
